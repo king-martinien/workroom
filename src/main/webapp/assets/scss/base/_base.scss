@@ -1,0 +1,63 @@
+*::selection {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html, body {
+  height: 100vh;
+  background-color: var(--clr-bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-weight: 600;
+}
+
+button {
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  font-size: inherit;
+  border-radius: var(--radius-14);
+  border: 2px solid var(--clr-entry-line);
+  padding: 12px 18px;
+
+  &:not([type='checkbox']) {
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: var(--clr-entry);
+    font-size: 16px;
+  }
+
+  &:focus {
+    color: var(--clr-text);
+    outline-color: var(--clr-primary);
+  }
+}
