@@ -4,6 +4,17 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
+    <!-- Restriction Filter -->
+    <filter>
+        <filter-name>Restriction Filter</filter-name>
+        <filter-class>com.kingmartinien.workroom.controller.filters.RestrictionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Restriction Filter</filter-name>
+        <url-pattern>/WEB-INF/pages/private/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
     <!-- Login Servlet -->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -12,6 +23,26 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- Signup Servlet -->
+    <servlet>
+        <servlet-name>SignupServlet</servlet-name>
+        <servlet-class>com.kingmartinien.workroom.controller.servlets.SignupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupServlet</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+
+    <!-- Dashboard Servlet -->
+    <servlet>
+        <servlet-name>Dashboard Servlet</servlet-name>
+        <servlet-class>com.kingmartinien.workroom.controller.servlets.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Dashboard Servlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
     </servlet-mapping>
 
     <!-- INCLUDE JSTL ON ALL PAGES -->

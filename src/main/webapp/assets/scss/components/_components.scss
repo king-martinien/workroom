@@ -1,3 +1,12 @@
+.container {
+  padding: 10px;
+  height: 100%;
+
+  @media screen and (min-width: 1024px) {
+    padding: 20px;
+  }
+}
+
 .entry-line {
   display: flex;
   align-items: center;
@@ -44,6 +53,7 @@
   width: 100%;
   padding: 14px 20px;
   border-radius: var(--radius-14);
+  display: flex;
 
   svg {
     transition: .3s ease-in;

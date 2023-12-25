@@ -78,6 +78,20 @@ input:focus {
   outline-color: var(--clr-primary);
 }
 
+ul {
+  list-style: none;
+}
+
+.container {
+  padding: 10px;
+  height: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+}
+
 .entry-line {
   display: flex;
   align-items: center;
@@ -120,6 +134,7 @@ input:focus {
   width: 100%;
   padding: 14px 20px;
   border-radius: var(--radius-14);
+  display: flex;
 }
 .btn svg {
   transition: 0.3s ease-in;

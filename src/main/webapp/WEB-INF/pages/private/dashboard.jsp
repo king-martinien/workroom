@@ -5,13 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Workroom - Signup</title>
+    <title>Workroom - Dashboard</title>
+    <link rel="stylesheet" href="<c:url value="/assets/css/style.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/css/dashboard.css"/>">
 </head>
 <body>
 <main class="main">
-    <div class="signup-form">
-
-    </div>
 </main>
 </body>
 </html>
