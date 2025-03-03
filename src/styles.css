@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: 'Nunito Sans', sans-serif;
+  --color-*: initial;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-primary-50: #C5D6FF;
+  --color-primary-100: #B5CAFF;
+  --color-primary-200: #94B2FF;
+  --color-primary-300: #739AFF;
+  --color-primary-400: #5283FF;
+  --color-primary-500: #316BFF;
+  --color-primary-600: #295AD6;
+  --color-primary-700: #2149AD;
+  --color-primary-800: #193885;
+  --color-primary-900: #12275C;
+  --color-primary-950: #0A1629;
+}
+
+@layer base {
+  html, body {
+    @apply text-primary-900 selection:bg-primary-700 selection:text-white;
+  }
+}
+
