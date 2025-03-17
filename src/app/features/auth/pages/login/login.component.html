@@ -1,0 +1,144 @@
+<div class="flex">
+  <div
+    class="hidden flex-1/2 bg-primary-600 p-10 text-white lg:flex lg:flex-col lg:items-center lg:justify-center"
+  >
+    <img
+      alt="Logo Workroom"
+      height="160"
+      class="mb-5 w-40"
+      ngSrc="/images/workroom-logo-white.png"
+      width="588"
+    />
+    <h1 class="mb-5 text-center text-5xl font-bold">
+      Your place to work Plan. <br />
+      Create. Control.
+    </h1>
+    <img
+      alt="Illustration"
+      height="373"
+      ngSrc="/images/Illustration.png"
+      priority
+      width="500"
+    />
+  </div>
+  <div
+    class="flex flex-1/2 flex-col items-center justify-center px-4 py-24 lg:h-dvh lg:px-0 lg:py-20"
+  >
+    <div class="mb-10 text-center">
+      <img
+        alt="Logo workroom"
+        class="mx-auto mb-4 w-36"
+        height="160"
+        ngSrc="/images/workroom-logo.png"
+        width="588"
+      />
+      <h1 class="text-3xl font-bold">Welcome Back 👋🏽</h1>
+      <p>Enter your email and password to sign in.</p>
+    </div>
+    <form
+      (ngSubmit)="onSubmitForm()"
+      [formGroup]="loginForm"
+      class="w-full max-w-sm"
+    >
+      <div class="mb-3.5 flex flex-col">
+        <label class="sr-only text-sm font-medium" for="email">Email</label>
+        <input
+          [ngClass]="[
+            f.email.touched && f.email.errors
+              ? 'border-red-500 focus:ring-red-600'
+              : 'focus:border-primary-600',
+          ]"
+          autocomplete="on"
+          class="h-12 w-full rounded-md border border-input-border pl-4 duration-200 focus:ring-1 focus:ring-primary-600 focus:outline-none"
+          formControlName="email"
+          id="email"
+          name="email"
+          placeholder="Eg : martinienfokoue@gmail.com"
+          type="email"
+        />
+        @if (f.email.touched && f.email.errors) {
+          @if (f.email.errors['required']) {
+            <span class="text-sm font-medium text-red-500"
+            >Email is required</span
+            >
+          }
+          @if (f.email.errors['email']) {
+            <span class="text-sm font-medium text-red-500"
+            >Enter a valid email</span
+            >
+          }
+        }
+      </div>
+      <div class="mb-3.5 flex flex-col">
+        <label class="sr-only text-sm font-medium" for="password"
+        >Password</label
+        >
+        <div class="relative">
+          <input
+            [ngClass]="[
+              f.password.touched && f.password.errors
+                ? 'border-red-500 focus:ring-red-600'
+                : 'focus:border-primary-600',
+            ]"
+            [type]="type()"
+            class="h-12 w-full rounded-md border border-input-border pl-4 duration-200 focus:ring-1 focus:ring-primary-600 focus:outline-none"
+            formControlName="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <button
+            (click)="togglePasswordVisibility()"
+            class="absolute top-1/2 right-2 flex h-8 w-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full p-1.5 text-[8px] font-semibold duration-100 hover:bg-gray-50/50"
+            type="button"
+          >
+            {{ type() == 'text' ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        @if (f.password.touched && f.password.errors) {
+          @if (f.password.errors['required']) {
+            <span class="text-sm font-medium text-red-500"
+            >Password is required</span
+            >
+          }
+        }
+      </div>
+      <div class="mt-7 mb-5 flex items-center justify-between">
+        <div class="flex items-center gap-1.5">
+          <input
+            formControlName="rememberMe"
+            id="rememberMe"
+            name="rememberMe"
+            type="checkbox"
+          />
+          <label for="rememberMe">Remember me</label>
+        </div>
+        <a
+          [routerLink]="[]"
+          class="font-semibold text-primary-600 hover:text-primary-700 hover:underline"
+        >Forgot password ?</a
+        >
+      </div>
+      <button
+        [disabled]="loginForm.invalid"
+        class="mb-3 h-11 w-full cursor-pointer rounded-md bg-primary-600 text-sm font-semibold text-white duration-100 hover:bg-primary-700 disabled:cursor-auto disabled:opacity-70 disabled:hover:bg-primary-600"
+        type="submit"
+      >
+        @if (loading()) {
+          <span>Login...</span>
+        } @else {
+          <span>Login</span>
+        }
+      </button>
+      <p class="text-center">
+        Don't you have an account ?
+        <a
+          [routerLink]="['/auth/signup']"
+          class="font-semibold text-primary-600 hover:text-primary-700 hover:underline"
+        >
+          <span>Signup</span>
+        </a>
+      </p>
+    </form>
+  </div>
+</div>

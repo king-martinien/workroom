@@ -4,7 +4,12 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'workroom-auth',
   imports: [RouterOutlet],
-  template: ` <router-outlet></router-outlet>`,
-  styles: ``,
+  template: `
+    <div class="min-h-dvh lg:h-dvh">
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: ``
 })
-export class AuthComponent {}
+export class AuthComponent {
+}

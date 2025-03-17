@@ -6,6 +6,31 @@
   --color-*: initial;
   --color-white: #FFFFFF;
   --color-black: #000000;
+  --color-input-border: #D8E0F0;
+  /* GRAY COLOR */
+  --color-gray-50: #E0E0E4;
+  --color-gray-100: #D7D8DC;
+  --color-gray-200: #C6C6CD;
+  --color-gray-300: #B4B5BD;
+  --color-gray-400: #A3A3AE;
+  --color-gray-500: #91929E;
+  --color-gray-600: #7A7B85;
+  --color-gray-700: #63636B;
+  --color-gray-800: #91929E;
+  --color-gray-900: #343539;
+  --color-gray-950: #1A1A1D;
+  /* RED COLOR */
+  --color-red-50: #FFEBEE;
+  --color-red-100: #FFCDD2;
+  --color-red-200: #EF9A9A;
+  --color-red-300: #E57373;
+  --color-red-400: #EF5350;
+  --color-red-500: #F44336;
+  --color-red-600: #E53935;
+  --color-red-700: #D32F2F;
+  --color-red-800: #C62828;
+  --color-red-900: #B71C1C;
+  --color-red-950: #7F1D1D;
   --color-primary-50: #C5D6FF;
   --color-primary-100: #B5CAFF;
   --color-primary-200: #94B2FF;
