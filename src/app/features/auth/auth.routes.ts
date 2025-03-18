@@ -6,7 +6,7 @@ export const authRoutes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: '',
@@ -14,9 +14,14 @@ export const authRoutes: Routes = [
     children: [
       {
         path: 'login',
-        loadComponent: (): Promise<Type<any>> =>
-          import('./pages/login/login.component').then((c) => c.LoginComponent),
+        loadComponent: (): Promise<Type<any>> => import('./pages/login/login.component')
+          .then((c) => c.LoginComponent)
       },
-    ],
-  },
+      {
+        path: 'forgot-password',
+        loadComponent: (): Promise<Type<any>> => import('./pages/forgot-password/forgot-password.component')
+          .then((c) => c.ForgotPasswordComponent)
+      }
+    ]
+  }
 ];

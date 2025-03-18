@@ -36,7 +36,10 @@ export class LoginComponent {
   }
 
   onSubmitForm(): void {
-    const { email, password } = this.loginForm.getRawValue();
-    this.#authService.login({ email, password }).pipe(takeUntilDestroyed(this.#destroyRef)).subscribe();
+    this.loginForm.markAllAsTouched();
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.getRawValue();
+      this.#authService.login({ email, password }).pipe(takeUntilDestroyed(this.#destroyRef)).subscribe();
+    }
   }
 }

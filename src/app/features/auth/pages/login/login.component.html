@@ -60,12 +60,13 @@
           <input formControlName="rememberMe" id="rememberMe" name="rememberMe" type="checkbox" />
           <label for="rememberMe">Remember me</label>
         </div>
-        <a [routerLink]="[]" class="font-semibold text-primary-600 hover:text-primary-700 hover:underline">
+        <a [routerLink]="['/auth/forgot-password']"
+           class="font-semibold text-primary-600 hover:text-primary-700 hover:underline">
           Forgot password ?
         </a>
       </div>
       <button
-        [disabled]="loginForm.invalid"
+        [disabled]="loading()"
         class="mb-3 h-11 w-full cursor-pointer rounded-md bg-primary-600 text-sm font-semibold text-white duration-100
         hover:bg-primary-700 disabled:cursor-auto disabled:opacity-70 disabled:hover:bg-primary-600"
         type="submit">
